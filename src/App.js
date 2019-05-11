@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
       </header>
       <body className="App-body">
-      Figure out what to do here . . . 
+      <p>Figure out what to do here . . . </p>
       </body>
     </div>
   );
