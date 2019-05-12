@@ -7,3 +7,5 @@ const apiConfig = {
         "accessKey": "<your-access-key>"
     }
 };
+
+export default apiConfig;
