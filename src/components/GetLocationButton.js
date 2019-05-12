@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const getLocation = (callback) => {
+const callback = (position) => {
+    console.log(position);
+};
+
+export const getLocation = () => {
     if (navigator && navigator.geolocation && navigator.geolocation.getCurrentPosition) {
         return navigator.geolocation.getCurrentPosition(callback);
     } else {
