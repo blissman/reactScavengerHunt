@@ -18,9 +18,3 @@ it("should include the apiConfig object", () => {
     expect(typeof(apiConfig.unsplash.accessKey)).toEqual("string");
 });
 
-it("should render the GetLocationButton", () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<App />, div);
-    expect(document.getElementById("GetLocationButton")).toBeTruthy();
-    ReactDOM.unmountComponentAtNode(div);
-})
