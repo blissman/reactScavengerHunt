@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { imageSource } from './components/Image.js'
+import { imageSource } from './components/Image.js';
+import { getLocation } from './components/GetLocationButton.js';
+
+test.getLocation = getLocation;
+
+beforeEach(() => {
+    spyOn(test, "getLocation");
+});
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
@@ -22,4 +29,8 @@ it("should include the apiConfig object", () => {
 it("should check the image string for \"unsplash\"", () => {
     expect(imageSource("unsplash")).toEqual(<p>"image detected"</p>);
     expect(imageSource("Bliss")).toEqual(<p>Bliss</p>);
+});
+
+it("should return false if navigator.geolocation.getCurrentLocation is falsy", () => {
+    expect(getLocation()).toBeFalsy();
 });
