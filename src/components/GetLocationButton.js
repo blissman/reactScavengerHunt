@@ -8,4 +8,4 @@ function GetLocationButton() {
     );
 }
 
-export default App;
+export default GetLocationButton;
