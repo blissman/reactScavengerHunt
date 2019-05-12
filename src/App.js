@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import apiConfig from './config/apiConfig.js';
 import GetLocationButton from './components/GetLocationButton.js'
-import Image from './components/Image.js'
+import { Image } from './components/Image.js'
 
 window.apiConfig = apiConfig;
 

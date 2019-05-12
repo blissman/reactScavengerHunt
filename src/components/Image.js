@@ -2,21 +2,19 @@ import React from 'react';
 
 let image = "Click the button to get your unique image!";
 
-const imageSource = () => {
+export const imageSource = (image) => {
     const imageTest = new RegExp(/unsplash/);
     if (!imageTest.test(image)) {
         return <p>{image}</p>;
     } else {
-        return <p>"image detected"</p>
+        return <p>"image detected"</p>;
     }
 };
-
-function Image() {
+    
+export const Image = () => {
     return (
         <div id="Image">
-        {imageSource()}
+        {imageSource(image)}
         </div>
     );
 }
-
-export default Image;

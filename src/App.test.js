@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { imageSource } from './components/Image.js'
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
@@ -18,3 +19,7 @@ it("should include the apiConfig object", () => {
     expect(typeof(apiConfig.unsplash.accessKey)).toEqual("string");
 });
 
+it("should check the image string for \"unsplash\"", () => {
+    expect(imageSource("unsplash")).toEqual(<p>"image detected"</p>);
+    expect(imageSource("Bliss")).toEqual(<p>Bliss</p>);
+});
