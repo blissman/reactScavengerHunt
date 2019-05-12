@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
+import apiConfig from './config/apiConfig.js';
+
+window.apiConfig = apiConfig;
 
 function App() {
     return (
         <div className="App">
         <header className="App-header">
         </header>
-        <body className="App-body">
         <p>Figure out what to do here . . . </p>
-        </body>
         </div>
     );
 }

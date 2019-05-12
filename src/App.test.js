@@ -12,6 +12,8 @@ it("should include the apiConfig object", () => {
     expect(apiConfig).toBeDefined();
     expect(apiConfig.what3words).toBeDefined();
     expect(apiConfig.unsplash).toBeDefined();
-    expect(typeof(apiConfig.what3words)).toEqual("string");
-    expect(typeof(apiConfig.unsplash)).toEqual("string");
+    expect(apiConfig.what3words.accessKey).toBeDefined();
+    expect(apiConfig.unsplash.accessKey).toBeDefined();
+    expect(typeof(apiConfig.what3words.accessKey)).toEqual("string");
+    expect(typeof(apiConfig.unsplash.accessKey)).toEqual("string");
 });
