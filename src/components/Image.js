@@ -10,11 +10,11 @@ export const imageSource = (image) => {
         return <p>"image detected"</p>;
     }
 };
-    
+
 export const Image = () => {
     return (
         <div id="Image">
         {imageSource(image)}
         </div>
     );
-}
+};
