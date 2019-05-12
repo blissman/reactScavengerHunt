@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const MakeRequest = (url, method) => {
     let request = new XMLHttpRequest();
 
