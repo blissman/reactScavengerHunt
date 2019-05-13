@@ -13,10 +13,15 @@ const wordsCallback = (position) => {
     MakeRequest(url).then((response) => {
         const words = JSON.parse(response.responseText).words;
         const searchString = words.replace(/\./g, '-');
-        const imageURL = "https://api.unsplash.com/search/photos?page=3&query=" + searchString + "&client_id=" + apiConfig.unsplash.accessKey;
+        const imageURL = "https://api.unsplash.com/search/photos?query=" + searchString + "&client_id=" + apiConfig.unsplash.accessKey;
         MakeRequest(imageURL).then((response) => {
             const images = JSON.parse(response.responseText);
-            const imageURL = images.results[0].urls.regular;
+            let imageURL;
+            if (images.results[0]) {
+                imageURL = images.results[0].urls.regular;
+            } else {
+                imageURL = "No image found! Sorry :(";
+            }
             window.setImageState(imageURL);
         }).catch((error) => {
             console.log(error);

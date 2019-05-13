@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { imageSource } from './components/Image.js';
 import { getLocation } from './components/GetLocationButton.js';
+import apiConfig from './config/apiConfig.js';
 
 test.getLocation = getLocation;
 
