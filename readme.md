@@ -28,6 +28,10 @@ Create a file named ```apiConfig.js``` inside the ```src/config``` folder, using
 
 Start your server using ```$ npm start``` and allow your browser to detect your location. The unique image of your location should appear!
 
+## Using the App
+
+Navigate to the page, click on the button, and get the image for your location!
+
 =====
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
