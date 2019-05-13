@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import apiConfig from '../config/apiConfig.js';
 import { MakeRequest } from './MakeRequest.js';
 
@@ -17,7 +17,7 @@ const wordsCallback = (position) => {
         MakeRequest(imageURL).then((response) => {
             const images = JSON.parse(response.responseText);
             const imageURL = images.results[0].urls.regular;
-            console.log(imageURL);
+            window.butts(imageURL);
         }).catch((error) => {
             console.log(error);
             return false;
@@ -36,10 +36,13 @@ export const getLocation = () => {
     }
 };
 
-export const GetLocationButton = () => {
-    return (
-        <div id="GetLocationButton">
-        <button type="button" onClick={getLocation}>Get Location</button>
-        </div>
-    );
+export class GetLocationButton extends Component {
+    render() {
+        window.butts = this.props.setImage;
+        return (
+            <div id="GetLocationButton">
+            <button type="button" onClick={getLocation}>Get Location</button>
+            </div>
+        );
+    }
 };

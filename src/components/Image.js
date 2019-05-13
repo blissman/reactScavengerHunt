@@ -1,6 +1,6 @@
 import React from 'react';
 
-let image = "Click the button to get your unique image!";
+let image = "Click on the button to get a unique image!";
 
 export const imageSource = (image) => {
     const imageTest = new RegExp(/unsplash/);

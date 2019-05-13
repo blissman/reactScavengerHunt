@@ -10,13 +10,18 @@ class App extends Component {
     state = {
         "image": "Click the button to get your unique location image!"
     };
+
+    setImage = (url) => {
+        this.setState({"image": url});
+    };
+
     render() {
         return (
             <div className="App">
             <header className="App-header">
             </header>
             <Image image={this.state.image}/>
-            <GetLocationButton />
+            <GetLocationButton setImage={this.setImage}/>
             </div>
         );
     }
