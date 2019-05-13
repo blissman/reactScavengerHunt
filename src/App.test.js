@@ -27,7 +27,7 @@ it("should include the apiConfig object", () => {
 });
 
 it("should check the image string for \"unsplash\"", () => {
-    expect(imageSource("unsplash")).toEqual(<p>"image detected"</p>);
+    expect(imageSource("unsplash")).toEqual(<img alt="Your Location" src="unsplash"/>);
     expect(imageSource("Bliss")).toEqual(<p>Bliss</p>);
 });
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 let image = "Click on the button to get a unique image!";
 
@@ -7,14 +7,17 @@ export const imageSource = (image) => {
     if (!imageTest.test(image)) {
         return <p>{image}</p>;
     } else {
-        return <p>"image detected"</p>;
+        return <img src={image} alt="Your Location"></img>;
     }
 };
 
-export const Image = () => {
-    return (
-        <div id="Image">
-        {imageSource(image)}
-        </div>
-    );
+export class Image extends Component {
+    render() {
+        image = this.props.image;
+        return (
+            <div id="Image">
+            {imageSource(image)}
+            </div>
+        );
+    }
 };

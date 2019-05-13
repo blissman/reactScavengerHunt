@@ -17,7 +17,7 @@ const wordsCallback = (position) => {
         MakeRequest(imageURL).then((response) => {
             const images = JSON.parse(response.responseText);
             const imageURL = images.results[0].urls.regular;
-            window.butts(imageURL);
+            window.setImageState(imageURL);
         }).catch((error) => {
             console.log(error);
             return false;
@@ -38,7 +38,7 @@ export const getLocation = () => {
 
 export class GetLocationButton extends Component {
     render() {
-        window.butts = this.props.setImage;
+        window.setImageState = this.props.setImage;
         return (
             <div id="GetLocationButton">
             <button type="button" onClick={getLocation}>Get Location</button>
