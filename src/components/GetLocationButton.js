@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import apiConfig from '../config/apiConfig.js';
-import { MakeRequest } from './MakeRequest.js';
 import { wordsCallback } from './WordsCallback.js';
 
 export const getLocation = () => {
