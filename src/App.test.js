@@ -4,6 +4,7 @@ import App from './App';
 import { imageSource } from './components/Image.js';
 import { getLocation } from './components/GetLocationButton.js';
 import apiConfig from './config/apiConfig.js';
+import { getBarLocation } from './components/SearchBar.js'
 
 test.getLocation = getLocation;
 
@@ -34,4 +35,12 @@ it("should check the image string for \"unsplash\"", () => {
 
 it("should return false if navigator.geolocation.getCurrentLocation is falsy", () => {
     expect(getLocation()).toBeFalsy();
+});
+
+it("should return false if the search bar doesn't pass a string", () => {
+    expect(getBarLocation()).toBeFalsy();
+    expect(getBarLocation(32)).toBeFalsy();
+    expect(getBarLocation(() => {return true}));
+    expect(getBarLocation(null)).toBeFalsy();
+    expect(getBarLocation(true)).toBeFalsy();
 });

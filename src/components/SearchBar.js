@@ -3,22 +3,26 @@ import apiConfig from '../config/apiConfig.js';
 import { MakeRequest } from './MakeRequest.js';
 import { wordsCallback } from './WordsCallback.js';
 
-const getBarLocation = (location) => {
-
-        const url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=" + apiConfig.googleGeocode.accessKey;
-        MakeRequest(url).then((response) => {
-            const responseObject = JSON.parse(response.responseText);
-            const location = responseObject.results[0].geometry.location;
-            const latitude = location.lat;
-            const longitude = location.lng;
-            const callbackObject = {
-                "coords": {
-                    "latitude": latitude,
-                    "longitude": longitude
-                }
-            };
-            wordsCallback(callbackObject);
-        }).catch((error) => {console.log(error);});
+export const getBarLocation = (location) => {
+    if (typeof(location) !== "string") {
+        return false;
+    }
+    const url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=" + apiConfig.googleGeocode.accessKey;
+    MakeRequest(url).then((response) => {
+        const responseObject = JSON.parse(response.responseText);
+        const location = responseObject.results[0].geometry.location;
+        const latitude = location.lat;
+        const longitude = location.lng;
+        const callbackObject = {
+            "coords": {
+                "latitude": latitude,
+                "longitude": longitude
+            }
+        };
+        wordsCallback(callbackObject);
+    }).catch((error) => {
+        console.log(error);
+    });
 };
 
 export class SearchBar extends Component {
