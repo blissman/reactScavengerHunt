@@ -5,6 +5,9 @@ const apiConfig = {
     },
     "unsplash": {
         "accessKey": "<your-access-key>"
+    },
+    "googleGeocode": {
+    	"accessKey": "<your-access-key>"
     }
 };
 

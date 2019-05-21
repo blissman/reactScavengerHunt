@@ -4,7 +4,7 @@ React Scavenger Hunt is used for serving unique photos based on the user's locat
 
 ## How it Works
 
-This app takes your detected location and converts the latitude and longitude to a word combination using the what3words api, then returns an image from the unsplash api.
+This app takes your detected location and converts the latitude and longitude to a word combination using the what3words api, then returns an image from the unsplash api. You also have the option of using Google's Geocoding API along with the search bar to find pictures for other locations.
 
 ## Pre-requisites
 
@@ -17,6 +17,10 @@ You'll need an api key from [what3words](https://www.what3words.com) in order to
 #### unsplash
 
 You'll also need an api key from [unsplash](https://www.unsplash.com) in order to fetch images.
+
+#### Google Geocoding
+
+You'll also need an api key from [Google Geocode](https://developers.google.com/maps/documentation/geocoding/start) in order to search for locations.
 
 ## Setup
 

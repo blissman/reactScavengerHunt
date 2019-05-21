@@ -6,7 +6,7 @@ const wordsCallback = (position) => {
     if (typeof(position) !== "object" && !position.coords && !position.coords.latitude && !position.coords.longitude) {
         return false;
     }
-    console.log(position);
+
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     const url = "https://api.what3words.com/v3/convert-to-3wa?coordinates=" + latitude + "%2C" + longitude + "&key=" + apiConfig.what3words.accessKey;
@@ -33,20 +33,41 @@ const wordsCallback = (position) => {
     });
 };
 
-export const getLocation = () => {
-    if (navigator && navigator.geolocation && navigator.geolocation.getCurrentPosition) {
-        return navigator.geolocation.getCurrentPosition(wordsCallback);
-    } else {
-        return false;
-    }
+const getBarLocation = (location) => {
+
+        const url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=" + apiConfig.googleGeocode.accessKey;
+        MakeRequest(url).then((response) => {
+            const responseObject = JSON.parse(response.responseText);
+            const location = responseObject.results[0].geometry.location;
+            const latitude = location.lat;
+            const longitude = location.lng;
+            const callbackObject = {
+                "coords": {
+                    "latitude": latitude,
+                    "longitude": longitude
+                }
+            };
+            wordsCallback(callbackObject);
+        }).catch((error) => {console.log(error);});
 };
 
-export class GetLocationButton extends Component {
+export class SearchBar extends Component {
+
+    state = {
+        "city": ''
+    };
+
+    handleChange(event) {
+        this.setState({city: event.target.value})
+    };
+
     render() {
         window.setImageState = this.props.setImage;
         return (
-            <div id="GetLocationButton">
-            <button type="button" onClick={getLocation}>Get Location</button>
+            <div id="SearchBar">
+            <input type="text" value={this.state.city} onChange={this.handleChange.bind(this)}/><button type="button" onClick={(() => {
+                getBarLocation(this.state.city);
+            })}>Get Location</button>
             </div>
         );
     }

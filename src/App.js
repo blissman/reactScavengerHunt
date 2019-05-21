@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { GetLocationButton } from './components/GetLocationButton.js';
+import { SearchBar } from './components/SearchBar.js';
 import { Image } from './components/Image.js';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
             </header>
             <Image image={this.state.image}/>
             <GetLocationButton setImage={this.setImage}/>
+            <SearchBar setImage={this.setImage}/>
             </div>
         );
     }
