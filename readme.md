@@ -30,8 +30,8 @@ Create a file named ```apiConfig.js``` inside the ```src/config``` folder, using
 
 ### Testing the App
 
-Start your server using ```$ npm start``` and allow your browser to detect your location. The unique image of your location should appear!
+Start your server using ```$ npm start``` and allow your browser to detect your location. Click the button or search a city, and the unique image of your location should appear!
 
 ## Using the App
 
-Navigate to the page, click on the button, and get the image for your location!
+Navigate to the page, click on the button or search for your city, and get the image for your location!
