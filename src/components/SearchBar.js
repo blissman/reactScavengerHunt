@@ -37,7 +37,7 @@ export class SearchBar extends Component {
             <div id="SearchBar">
             <input type="text" value={this.state.city} onChange={this.handleChange.bind(this)}/><button type="button" onClick={(() => {
                 getBarLocation(this.state.city);
-            })}>Get Location</button>
+            })}>Search Location</button>
             </div>
         );
     }
