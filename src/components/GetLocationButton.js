@@ -14,7 +14,7 @@ export class GetLocationButton extends Component {
         window.setImageState = this.props.setImage;
         return (
             <div id="GetLocationButton">
-            <button type="button" onClick={getLocation}>Get Location</button>
+            <button type="button" onClick={getLocation}>Get Current Location</button>
             </div>
         );
     }
