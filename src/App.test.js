@@ -6,12 +6,6 @@ import { getLocation } from './components/GetLocationButton.js';
 import apiConfig from './config/apiConfig.js';
 import { getBarLocation } from './components/SearchBar.js'
 
-test.getLocation = getLocation;
-
-beforeEach(() => {
-    spyOn(test, "getLocation");
-});
-
 it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<App />, div);
