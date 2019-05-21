@@ -18,8 +18,10 @@ it("should include the apiConfig object", () => {
     expect(apiConfig.unsplash).toBeDefined();
     expect(apiConfig.what3words.accessKey).toBeDefined();
     expect(apiConfig.unsplash.accessKey).toBeDefined();
+    expect(apiConfig.googleGeocode.accessKey).toBeDefined();
     expect(typeof(apiConfig.what3words.accessKey)).toEqual("string");
     expect(typeof(apiConfig.unsplash.accessKey)).toEqual("string");
+    expect(typeof(apiConfig.googleGeocode.accessKey)).toEqual("string");
 });
 
 it("should check the image string for \"unsplash\"", () => {
