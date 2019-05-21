@@ -40,7 +40,7 @@ it("should return false if navigator.geolocation.getCurrentLocation is falsy", (
 it("should return false if the search bar doesn't pass a string", () => {
     expect(getBarLocation()).toBeFalsy();
     expect(getBarLocation(32)).toBeFalsy();
-    expect(getBarLocation(() => {return true}));
+    expect(getBarLocation(() => {return true})).toBeFalsy();
     expect(getBarLocation(null)).toBeFalsy();
     expect(getBarLocation(true)).toBeFalsy();
 });
