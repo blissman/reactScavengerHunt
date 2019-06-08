@@ -7,7 +7,7 @@ const apiConfig = {
         "accessKey": "<your-access-key>"
     },
     "googleGeocode": {
-    	"accessKey": "<your-access-key>"
+        "accessKey": "<your-access-key>"
     }
 };
 
